@@ -61,14 +61,14 @@ module.exports = {
             exclude: /.*\.html$/,
             basePath: 'paperplane-hospital',
             s3Options: {
-              accessKeyId: process.env.COS_SECRET_ID,
-              secretAccessKey: process.env.COS_SECRET_KEY,
-              region: 'ap-hongkong',
-              endpoint: 'https://cos.ap-hongkong.myqcloud.com',
+              accessKeyId: process.env.S3_ACCESS_KEY_ID,
+              secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+              region: process.env.S3_REGION,
+              endpoint: process.env.S3_ENDPOINT,
               apiVersion: '2006-03-01',
             },
             s3UploadOptions: {
-              Bucket: 'paperplane-cdn-1253277322',
+              Bucket: process.env.S3_BUCKET_NAME,
             },
           })
         )
